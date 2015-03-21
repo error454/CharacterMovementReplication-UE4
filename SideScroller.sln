@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{908FE941-11A3-4819-A38A-B3C5EAF65EFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{E0D10F86-3352-4254-B52F-07AABBD813C7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SideScroller", "Intermediate\ProjectFiles\SideScroller.vcxproj", "{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UE4", "Intermediate\ProjectFiles\UE4.vcxproj", "{DE13ED75-F70C-4A42-AA1F-55465CEE2AEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DebugGame Editor|Android = DebugGame Editor|Android
+		DebugGame Editor|Windows = DebugGame Editor|Windows
+		DebugGame|Android = DebugGame|Android
+		DebugGame|Windows = DebugGame|Windows
+		Development Editor|Android = Development Editor|Android
+		Development Editor|Windows = Development Editor|Windows
+		Development|Android = Development|Android
+		Development|Windows = Development|Windows
+		Shipping|Android = Shipping|Android
+		Shipping|Windows = Shipping|Windows
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.DebugGame Editor|Android.ActiveCfg = Development_Game|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.DebugGame Editor|Windows.ActiveCfg = DebugGame_Editor|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.DebugGame Editor|Windows.Build.0 = DebugGame_Editor|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.DebugGame|Android.ActiveCfg = DebugGame_Game|Tegra-Android
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.DebugGame|Android.Build.0 = DebugGame_Game|Tegra-Android
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.DebugGame|Windows.ActiveCfg = DebugGame_Game|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.DebugGame|Windows.Build.0 = DebugGame_Game|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Development Editor|Android.ActiveCfg = Development_Game|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Development Editor|Windows.ActiveCfg = Development_Editor|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Development Editor|Windows.Build.0 = Development_Editor|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Development|Android.ActiveCfg = Development_Game|Tegra-Android
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Development|Android.Build.0 = Development_Game|Tegra-Android
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Development|Windows.ActiveCfg = Development_Game|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Development|Windows.Build.0 = Development_Game|x64
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Shipping|Android.ActiveCfg = Shipping_Game|Tegra-Android
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Shipping|Android.Build.0 = Shipping_Game|Tegra-Android
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Shipping|Windows.ActiveCfg = Shipping_Game|Win32
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6}.Shipping|Windows.Build.0 = Shipping_Game|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DE13ED75-F70C-4A42-AA1F-55465CEE2AEB} = {908FE941-11A3-4819-A38A-B3C5EAF65EFB}
+		{902CEF56-A89A-41A2-A8D6-E7F753A93EE6} = {E0D10F86-3352-4254-B52F-07AABBD813C7}
+	EndGlobalSection
+EndGlobal

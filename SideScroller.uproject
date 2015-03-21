@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "4.7",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "SideScroller",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

@@ -1,0 +1,8 @@
+Binaries/*
+Intermediate/*
+Saved/*
+Build/*
+DerivedDataCache/*
+*.sdf
+*.suo
+*.opensdf

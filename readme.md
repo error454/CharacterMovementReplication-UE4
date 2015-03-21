@@ -1,0 +1,1 @@
+This sample project illustrates how to add a new movement ability to the CharacterMovementComponent. See the accompanying [blog article](http://www.error454.com/2015/03/20/ue4/movement/replication) for more details.
