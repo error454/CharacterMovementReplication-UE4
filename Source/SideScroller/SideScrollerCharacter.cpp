@@ -4,7 +4,8 @@
 #include "SideScrollerCharacter.h"
 
 ASideScrollerCharacter::ASideScrollerCharacter(const FObjectInitializer& ObjectInitializer)
-	: Super(ObjectInitializer)
+	: Super(ObjectInitializer.SetDefaultSubobjectClass<UMyCharacterMovementComponent>(ACharacter::CharacterMovementComponentName)) 
+	/* Be sure to change the default character movement component above! */
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -37,8 +38,35 @@ ASideScrollerCharacter::ASideScrollerCharacter(const FObjectInitializer& ObjectI
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
 
+	CharMovement = Cast<UMyCharacterMovementComponent>(GetCharacterMovement());
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+}
+
+void ASideScrollerCharacter::CheckJumpInput(float DeltaTime)
+{
+	if (CharMovement)
+	{
+		CharMovement->PerformAbilities(DeltaTime);
+	}
+
+	Super::CheckJumpInput(DeltaTime);
+}
+
+void ASideScrollerCharacter::StartSprint()
+{
+	if (CharMovement)
+	{
+		CharMovement->bPressedSprint = true;
+	}
+}
+
+void ASideScrollerCharacter::StopSprint()
+{
+	if (CharMovement)
+	{
+		CharMovement->bPressedSprint = false;
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -49,6 +77,8 @@ void ASideScrollerCharacter::SetupPlayerInputComponent(class UInputComponent* In
 	// set up gameplay key bindings
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	InputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	InputComponent->BindAction("Sprint", IE_Pressed, this, &ASideScrollerCharacter::StartSprint);
+	InputComponent->BindAction("Sprint", IE_Released, this, &ASideScrollerCharacter::StopSprint);
 	InputComponent->BindAxis("MoveRight", this, &ASideScrollerCharacter::MoveRight);
 
 	InputComponent->BindTouch(IE_Pressed, this, &ASideScrollerCharacter::TouchStarted);

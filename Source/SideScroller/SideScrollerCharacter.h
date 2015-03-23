@@ -1,6 +1,7 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 #pragma once
 #include "GameFramework/Character.h"
+#include "MyCharacterMovementComponent.h"
 #include "SideScrollerCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -34,6 +35,15 @@ protected:
 
 public:
 	ASideScrollerCharacter(const FObjectInitializer& ObjectInitializer);
+
+	/** Overriden to check for sprinting */
+	virtual void CheckJumpInput(float DeltaTime) override;
+
+	void StartSprint();
+	void StopSprint();
+
+	UPROPERTY()
+	UMyCharacterMovementComponent* CharMovement;
 
 	/** Returns SideViewCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
